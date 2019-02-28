@@ -1,0 +1,24 @@
+<div class="padded">
+  <div style="text-align:center; background-color: black; margin-bottom: 25px">
+    <span style="color: white">
+      {{ title }}
+    </span>
+  </div>
+  <router-outlet></router-outlet>
+</div>
+<go-top-button   
+[animate]="true"
+[speed]="50"
+[acceleration]="2"
+[scrollDistance]="300"
+[styles]="{
+   'border-radius': '20px 20px 20px 20px',
+   'right': '5px',
+   'top': '90%',
+   'color': '#007bff',
+   'border': '5px solid',
+   'line-height': '20px',
+   'width': '50px'
+}">
+<i class='fa fa-chevron-up'></i>
+</go-top-button>

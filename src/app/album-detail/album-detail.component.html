@@ -1,0 +1,8 @@
+<div class="row">
+    <div class="card col-sm-5" *ngFor='let photoObject of albumDetails; index as i'>
+        <img src="{{photoObject.url}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Title: {{photoObject.title}}</h5> <p>Photo ID: {{photoObject.id}}</p>
+      </div>
+    </div>
+  </div>

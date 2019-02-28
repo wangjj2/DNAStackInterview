@@ -1,0 +1,48 @@
+
+  <ng-template #AddAlbumModal let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">New Album</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+              <label for="userID">User ID</label>
+              <div class="input-group">
+                <input id="userID" name="userID"  class="form-control" [(ngModel)]="newUserID">
+              </div>
+              <label for="albumID">Album ID</label>
+              <div class="input-group">
+                <input id="albumID" name="albumID" class="form-control" disabled [(ngModel)]="newAlbumID">
+              </div>
+            <label for="albumTitle">Album Title</label>
+            <div class="input-group">
+              <input id="albumTitle" name="albumTitle" class="form-control" [(ngModel)]="newAlbumTitle">
+            </div>
+            <label for="photos">photos</label>
+            <div class="input-group">
+              <input type='file' id="photos" name="photos" class="form-control" [(ngModel)]="newPhotos">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="addNewAlbum();modal.close('Save click')">Save</button>
+      </div>
+    </ng-template>
+    <button type="button" class="addButton btn btn-dark" (click)="open(AddAlbumModal)">
+        Add New Album
+    </button>
+<div class="row">
+  <div class="card col-sm-2" *ngFor='let albumObject of albumList; index as i'>
+    <button type="button" class="close" aria-label="Close" (click)="removeAlbum(albumObject.id)">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    <div class="card-body">
+      <h5 class="card-title">Album ID: {{albumObject.id}} </h5> <p>Title: {{albumObject.title}}</p>
+      <a routerLink="/detailView/{{albumObject.id}}" class="detailsButton btn btn-light">Album Details</a>
+    </div>
+  </div>
+</div>
