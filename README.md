@@ -1,5 +1,7 @@
 # DNAStackInterview
 
+first you'll need to do an npm build (`npm i`) as node_modules weren't pushed 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
 
 ## Development server
